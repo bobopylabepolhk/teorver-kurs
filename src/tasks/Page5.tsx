@@ -31,7 +31,7 @@ export default function Page5({ x, y }: DivData) {
           df: <b>{result.df}</b>
         </div>
         <div>
-          p-value: <b>{result.pValue.toFixed(6)}</b>
+          p-value: <b>{result.pValue}</b>
         </div>
         <div>
           Вывод: <b>{result.accept ? "H0 не отвергается" : "H0 отвергается"}</b>

@@ -15,14 +15,15 @@ import { histogram } from "../common/mapping";
 import type { DivData } from "../common/ogData";
 
 export default function Page1({ x, y }: DivData) {
-  const histX = useMemo(() => histogram(x, 8), [x]);
+  console.log(x.length);
+  const histX = useMemo(() => histogram(x, 5), [x]);
   const ecdfX = useMemo(() => ecdf(x), [x]);
   const histY = useMemo(() => histogram(y, 8), [y]);
   const ecdfY = useMemo(() => ecdf(y), [y]);
 
   return (
     <div>
-      <h2>X: гистограмма</h2>
+      <h2>Средняя ЗП: гистограмма</h2>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={histX}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -33,7 +34,7 @@ export default function Page1({ x, y }: DivData) {
         </BarChart>
       </ResponsiveContainer>
 
-      <h2>X: эмпирическая функция распределения</h2>
+      <h2>Средняя ЗП: эмпирическая функция распределения</h2>
       <ResponsiveContainer width="100%" height={300}>
         <LineChart data={ecdfX}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -44,7 +45,7 @@ export default function Page1({ x, y }: DivData) {
         </LineChart>
       </ResponsiveContainer>
 
-      <h2>Y: гистограмма</h2>
+      <h2>Стоимость м2: гистограмма</h2>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={histY}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -55,7 +56,7 @@ export default function Page1({ x, y }: DivData) {
         </BarChart>
       </ResponsiveContainer>
 
-      <h2>Y: эмпирическая функция распределения</h2>
+      <h2>Стоимость м2: эмпирическая функция распределения</h2>
       <ResponsiveContainer width="100%" height={300}>
         <LineChart data={ecdfY}>
           <CartesianGrid strokeDasharray="3 3" />

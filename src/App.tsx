@@ -11,7 +11,6 @@ import OriginalDataGraph from "./components/OriginalDataGraph";
 import "./index.css";
 
 function App() {
-  const ogYears = ogData.map(({ year }) => year);
   const ogPrices = ogData.map(({ price }) => price);
   const ogPayrolls = ogData.map(({ pay }) => pay);
 
@@ -22,7 +21,7 @@ function App() {
         <Route path="/" element={<OriginalDataGraph />} />
         <Route path="/1" element={<Page1 x={ogPayrolls} y={ogPrices} />} />
         <Route path="/2" element={<Page2 x={ogPayrolls} y={ogPrices} />} />
-        <Route path="/3" element={<Page3 prices={ogPrices} />} />
+        <Route path="/3" element={<Page3 x={ogPayrolls} y={ogPrices} />} />
         <Route path="/4" element={<Page4 />} />
         <Route path="/5" element={<Page5 x={ogPayrolls} y={ogPrices} />} />
         <Route path="/6" element={<Page6 x={ogPayrolls} y={ogPrices} />} />
